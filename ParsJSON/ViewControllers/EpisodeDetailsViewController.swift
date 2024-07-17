@@ -9,6 +9,9 @@ import UIKit
 
 class EpisodeDetailsViewController: UIViewController {
 
+    @IBOutlet weak var episodeDescriptionLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

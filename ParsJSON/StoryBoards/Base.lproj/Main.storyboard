@@ -11,7 +11,7 @@
         <!--Character Table View Controller-->
         <scene sceneID="f4g-ZU-CRX">
             <objects>
-                <tableViewController id="Txb-mO-CIQ" customClass="CharacterTableViewController" sceneMemberID="viewController">
+                <tableViewController id="Txb-mO-CIQ" customClass="CharacterTableViewController" customModule="ParsJSON" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="2ek-cQ-RUx">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -75,7 +75,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lfg-Ew-j6D">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lfg-Ew-j6D" customClass="CharacterImageView" customModule="ParsJSON" customModuleProvider="target">
                                 <rect key="frame" x="47" y="221" width="299" height="299"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="299" id="Haz-zo-REX"/>
@@ -110,6 +110,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="characterImageView" destination="Lfg-Ew-j6D" id="AGf-0T-NoV"/>
+                        <outlet property="descriptionLabel" destination="6WP-xv-2PI" id="Dmr-QG-jhy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WpF-B1-F0V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -234,6 +238,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="UT3-pz-KdA"/>
                     <connections>
+                        <outlet property="episodeDescriptionLabel" destination="6C9-xk-fzO" id="6uw-AL-mkX"/>
+                        <outlet property="tableView" destination="YBS-6e-qpB" id="Etm-4H-tex"/>
                         <segue destination="8uT-xB-00O" kind="show" identifier="showCharacter" id="ug7-Tq-xVL"/>
                     </connections>
                 </viewController>
@@ -249,7 +255,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x0h-T5-5SH">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x0h-T5-5SH" customClass="CharacterImageView" customModule="ParsJSON" customModuleProvider="target">
                                 <rect key="frame" x="44.666666666666657" y="120" width="304" height="352"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="352" id="2R9-wh-TDb"/>
@@ -274,6 +280,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="G5t-mP-dMM"/>
+                    <connections>
+                        <outlet property="characterImageView" destination="x0h-T5-5SH" id="snv-Jb-eng"/>
+                        <outlet property="descriptionLabel" destination="AhJ-uG-1Yv" id="J1F-jY-Utc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ojf-7C-PMd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
