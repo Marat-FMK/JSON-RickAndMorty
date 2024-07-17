@@ -7,10 +7,12 @@
 
 import UIKit
 
-class CharacterDetailsViewController: UIViewController {
+class CharacterDetailViewController: UIViewController {
 
     @IBOutlet weak var characterImageView: CharacterImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
+    
+    var character: Character!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

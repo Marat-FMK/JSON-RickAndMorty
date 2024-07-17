@@ -10,7 +10,7 @@
 
 struct RickAndMorty: Decodable {
     let info: Info
-    let resault: [Character]
+    let results: [Character]
 }
 
 struct Info: Decodable {
@@ -69,6 +69,6 @@ Data: \(data)
     }
 
 enum Link: String {
-    case rickAdnMortyApi = "https://rickandmortyapi.com/api/character"
+    case rickAndMortyApi = "https://rickandmortyapi.com/api/character"
 }
 

@@ -59,18 +59,26 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="fdc-D1-DwD">
-                        <barButtonItem key="leftBarButtonItem" title="Prev" id="luN-uE-j9f"/>
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="VRh-54-Kay"/>
+                        <barButtonItem key="leftBarButtonItem" title="Prev" id="luN-uE-j9f">
+                            <connections>
+                                <action selector="updateData:" destination="Txb-mO-CIQ" id="25N-zx-7Of"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" tag="1" title="Next" id="VRh-54-Kay">
+                            <connections>
+                                <action selector="updateData:" destination="Txb-mO-CIQ" id="OcJ-uR-1kK"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ONU-tt-lr7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="690.83969465648852" y="45.774647887323944"/>
         </scene>
-        <!--Character Details View Controller-->
+        <!--Character Detail View Controller-->
         <scene sceneID="0mN-Ve-Wjo">
             <objects>
-                <viewController id="ENC-cn-FpB" customClass="CharacterDetailsViewController" customModule="ParsJSON" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ENC-cn-FpB" customClass="CharacterDetailViewController" customModule="ParsJSON" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ubb-tr-m8t">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -247,10 +255,10 @@
             </objects>
             <point key="canvasLocation" x="3959.5419847328244" y="45.774647887323944"/>
         </scene>
-        <!--Character Details View Controller-->
+        <!--Character Detail View Controller-->
         <scene sceneID="mdk-5M-Na3">
             <objects>
-                <viewController id="8uT-xB-00O" customClass="CharacterDetailsViewController" customModule="ParsJSON" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8uT-xB-00O" customClass="CharacterDetailViewController" customModule="ParsJSON" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BX1-gY-SjR">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
