@@ -84,12 +84,13 @@
 		6C541CFE2C47E278004C9838 /* ParsJSON */ = {
 			isa = PBXGroup;
 			children = (
-				6C4476C82C484BE300C8FD5E /* Views */,
-				6C541D152C47E30C004C9838 /* StoryBoards */,
-				6C541D132C47E2B7004C9838 /* SupportingFiles */,
-				6C541D142C47E2E8004C9838 /* Source */,
 				6C541D162C47E343004C9838 /* ViewControllers */,
 				6C4476CB2C484D4F00C8FD5E /* Service */,
+				6C541D192C47EB49004C9838 /* Model */,
+				6C541D132C47E2B7004C9838 /* SupportingFiles */,
+				6C541D142C47E2E8004C9838 /* Source */,
+				6C4476C82C484BE300C8FD5E /* Views */,
+				6C541D152C47E30C004C9838 /* StoryBoards */,
 			);
 			path = ParsJSON;
 			sourceTree = "<group>";
@@ -128,7 +129,6 @@
 				6C541D032C47E278004C9838 /* CharacterDetailsViewController.swift */,
 				6C4476C22C484A0500C8FD5E /* EpisodesViewController.swift */,
 				6C4476C42C484A3700C8FD5E /* EpisodeDetailsViewController.swift */,
-				6C541D192C47EB49004C9838 /* Model */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";

@@ -8,16 +8,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Character Table View Controller-->
         <scene sceneID="f4g-ZU-CRX">
             <objects>
-                <tableViewController id="Txb-mO-CIQ" sceneMemberID="viewController">
+                <tableViewController id="Txb-mO-CIQ" customClass="CharacterTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="2ek-cQ-RUx">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="70" id="hJo-Tf-Wet">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="70" id="hJo-Tf-Wet" customClass="TableViewCell" customModule="ParsJSON" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="393" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hJo-Tf-Wet" id="jFc-AW-NpQ">
@@ -67,10 +67,10 @@
             </objects>
             <point key="canvasLocation" x="690.83969465648852" y="45.774647887323944"/>
         </scene>
-        <!--View Controller-->
+        <!--Character Details View Controller-->
         <scene sceneID="0mN-Ve-Wjo">
             <objects>
-                <viewController id="ENC-cn-FpB" sceneMemberID="viewController">
+                <viewController id="ENC-cn-FpB" customClass="CharacterDetailsViewController" customModule="ParsJSON" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ubb-tr-m8t">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -115,10 +115,10 @@
             </objects>
             <point key="canvasLocation" x="1493.8931297709923" y="45.774647887323944"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Episodes-->
         <scene sceneID="gS8-4r-Oum">
             <objects>
-                <tableViewController id="mIZ-Eh-WE2" sceneMemberID="viewController">
+                <tableViewController id="mIZ-Eh-WE2" customClass="EpisodesViewController" customModule="ParsJSON" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="bMQ-AJ-DSh">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -147,7 +147,7 @@
                             <outlet property="delegate" destination="mIZ-Eh-WE2" id="zuj-xB-FZb"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="IrE-A6-LZw"/>
+                    <navigationItem key="navigationItem" title="Episodes" id="IrE-A6-LZw"/>
                     <connections>
                         <segue destination="yTc-Kl-HJA" kind="show" identifier="showEpisode" id="lxq-iS-2Ap"/>
                     </connections>
@@ -156,10 +156,10 @@
             </objects>
             <point key="canvasLocation" x="3093.8931297709923" y="45.774647887323944"/>
         </scene>
-        <!--View Controller-->
+        <!--Episode Details View Controller-->
         <scene sceneID="gPp-RE-OJW">
             <objects>
-                <viewController id="yTc-Kl-HJA" sceneMemberID="viewController">
+                <viewController id="yTc-Kl-HJA" customClass="EpisodeDetailsViewController" customModule="ParsJSON" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dUl-GJ-ivb">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -181,7 +181,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.81960785390000002" green="0.55294120309999995" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="70" id="0tY-XS-KCC">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="70" id="0tY-XS-KCC" customClass="TableViewCell" customModule="ParsJSON" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0tY-XS-KCC" id="ccD-J8-rVS">
@@ -241,10 +241,10 @@
             </objects>
             <point key="canvasLocation" x="3959.5419847328244" y="45.774647887323944"/>
         </scene>
-        <!--View Controller-->
+        <!--Character Details View Controller-->
         <scene sceneID="mdk-5M-Na3">
             <objects>
-                <viewController id="8uT-xB-00O" sceneMemberID="viewController">
+                <viewController id="8uT-xB-00O" customClass="CharacterDetailsViewController" customModule="ParsJSON" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BX1-gY-SjR">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -302,7 +302,6 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4I2-W5-zzr" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="ouY-Rj-NUv"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="G8q-eY-aDw">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
