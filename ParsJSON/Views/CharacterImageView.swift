@@ -9,12 +9,38 @@ import UIKit
 
 class CharacterImageView: UIImageView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    func fetchImage(from url: String) {
+        
+        guard let url = URL(string: url) else {
+            image = UIImage(named: "picture")
+            return }
+        
+        if let cashedImage = getCachedImage(from: url) {
+            image = cashedImage
+            return
+        }
+        
+        ImageManager.shared.fetchImage(from: url) { data, response in
+            self.image = UIImage(data: data)
+            self.saveDataToCache(with: data,and: response)
+        }
     }
-    */
 
+    private func saveDataToCache(with data: Data, and response: URLResponse) {
+        guard let url = response.url else {return}
+        let request = URLRequest(url: url)
+        let cachedResponse = CachedURLResponse(response: response, data: data)
+        URLCache.shared.storeCachedResponse(cachedResponse, for: request)
+    }
+    
+    private func getCachedImage(from url: URL) -> UIImage? {
+        
+        let request = URLRequest(url: url)
+        if let cachedResponse = URLCache.shared.cachedResponse(for: request) {
+            return UIImage(data: cachedResponse.data)
+        }
+        return nil
+    }
+    
+    
 }
