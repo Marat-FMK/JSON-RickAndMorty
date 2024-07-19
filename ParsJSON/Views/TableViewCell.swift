@@ -12,7 +12,7 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var characterImageView: CharacterImageView! {
         didSet {
-            characterImageView.contentMode = . scaleAspectFit
+            characterImageView.contentMode = .scaleAspectFit
             characterImageView.clipsToBounds = true
             characterImageView.layer.cornerRadius = characterImageView.frame.height / 2
             characterImageView.backgroundColor = .white

@@ -9,8 +9,14 @@ import UIKit
 
 class CharacterTableViewController: UITableViewController {
 
-   //MARK: Private properties
-    private var rickAndMorty: RickAndMorty?
+    
+    
+    @IBOutlet weak var labeli: UILabel!
+    @IBOutlet weak var imageView: CharacterImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    //MARK: Private properties
+    private var rickAndMorty = RickAndMorty(info: Info(pages: 2, next: "www", prev: "www"), results: [Character(id: 3, name: "333", status: "333", species: "333", gender: "333", origin: Location(name: ""), location: Location(name: ""), image: "https://rickandmortyapi.com/api/character/avatar/22.jpeg", episode: ["dfdf"], url: "")])
     private var searchController = UISearchController(searchResultsController: nil)
     private var filteredCharacter: [Character] = []
     private var searchBarIsEmptyt: Bool {
@@ -34,17 +40,27 @@ class CharacterTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        isFiltering ? filteredCharacter.count : rickAndMorty?.results.count ?? 0
+        isFiltering ? filteredCharacter.count : rickAndMorty.results.count
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-        let character = isFiltering ? filteredCharacter[indexPath.row] : rickAndMorty?.results[indexPath.row]
-        cell.configure(with: character)
-
+        
+        var content = cell.defaultContentConfiguration()
+        let character = rickAndMorty.results[indexPath.row]
+        content.text = character.name
+        
+        NetworkManager.shared.fetchIm(from: character.image) { image in
+            content.image = image 
+        }
+        
+        
+        
+        cell.contentConfiguration = content
+            
         return cell
+        
     }
 
     // MARK: - Navigation
@@ -52,7 +68,7 @@ class CharacterTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = tableView.indexPathForSelectedRow else { return }
-        let character = isFiltering ? filteredCharacter[indexPath.row] : rickAndMorty?.results[indexPath.row]
+        let character = isFiltering ? filteredCharacter[indexPath.row] : rickAndMorty.results[indexPath.row]
         let detailVC = segue.destination as! CharacterDetailViewController
         detailVC.character = character
     }
@@ -60,10 +76,15 @@ class CharacterTableViewController: UITableViewController {
     
     @IBAction func updateData(_ sender: UIBarButtonItem) {
         sender.tag == 1
-        ? fetchData(from: rickAndMorty?.info.next)
-        : fetchData(from: rickAndMorty?.info.prev)
+        ? fetchData(from: rickAndMorty.info.next)
+        : fetchData(from: rickAndMorty.info.prev)
+        
     }
     
+    
+    
+    
+   
     // MARK: Private methods
     
     private func setupSearchController() {
@@ -114,9 +135,9 @@ extension CharacterTableViewController: UISearchResultsUpdating {
     }
     
     private func filterContentForSearchText(_ searchText: String) {
-        filteredCharacter = rickAndMorty?.results.filter { character in
+        filteredCharacter = rickAndMorty.results.filter { character in
             character.name.lowercased().contains(searchText.lowercased())
-        } ?? []
+        }
         
         tableView.reloadData()
     }
